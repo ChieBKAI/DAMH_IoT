@@ -8,6 +8,9 @@ define('DB_DATABASE', 'if0_35447870_db_admin'); // Tên cơ sở dữ liệu MyS
 // Kết nối tới MySQL
 $conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
+//local host
+//$conn = mysqli_connect('localhost', 'root', '', 'user_db');
+
 // Kiểm tra kết nối
 if ($conn === false) {
     die("Connect error: " . mysqli_connect_error());

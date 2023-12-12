@@ -38,18 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     manual_switch.addEventListener("change", function(event) {
-        if (this.checked) {
-            // Vô hiệu hóa switch fan và buzzer
-            fan_switch.disabled = true;
-            buzzer_switch.disabled = true;
-        } else {
-            // Nếu switch manual được tắt, bật lại switch fan và buzzer
-            fan_switch.disabled = false;
-            buzzer_switch.disabled = false;
-        }
-
         var manual_status = event.target.checked ? 1 : 0;
-
         database.ref("/Board_IoT/MANUAL").set(manual_status);
     });
 
@@ -88,10 +77,14 @@ document.addEventListener("DOMContentLoaded", function() {
         var manual_status = snapshot.val();
         manual_switch.checked = manual_status === 1;
         if (manual_status === 1) {
+            fan_switch.disabled = true;
+            buzzer_switch.disabled = true;
             manual_state.textContent = "ON";
             buzzer_box.style.background = "#adb3cc"
             fan_box.style.background = "#adb3cc"
         } else {
+            fan_switch.disabled = false;
+            buzzer_switch.disabled = false;
             manual_state.textContent = "OFF";
             buzzer_box.style.background = "#f99f93"
             fan_box.style.background = "#f99f93"
