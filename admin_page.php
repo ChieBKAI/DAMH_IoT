@@ -40,24 +40,12 @@ if(!isset($_SESSION['admin_name'])){
             <h3>Hi, <span>admin</span></h3>
             <h1>Welcome <span><?php echo $_SESSION['admin_name'] ?></span></h1>
             <a href="logout.php" class="btn">logout</a>
-            <p style="margin-top: 30px;
+            <p style="margin-top: 20px;
                      font-size: 30px;">These are status of our IoT system</p>   
          </div>
       </div>
 
       <div class="boxes">
-         <div class="box">
-            <h3>HUMIDITY</h3>
-            <h1><span id="humid">00</span></h1>
-         </div>
-         <div class="box">
-            <h3>TEMPERATURE</h3>
-            <h1><span id="temp">00</span></h1>
-         </div>
-         <div class="box">
-            <h3>AIR QUALITY</h3>
-            <h1><span id="air-q">00</span></h1>
-         </div>
          <div class="box">
             <h3>FAN: <span id="fan-state"></span></h3>
             <input type="checkbox" id="fan-switch" class="switch-input" disabled>
@@ -72,6 +60,36 @@ if(!isset($_SESSION['admin_name'])){
             <h3>BUZZER: <span id="buzzer-state"></span></h3>
             <input type="checkbox" id="buzzer-switch" class="switch-input" disabled>
             <label for="buzzer-switch" class="switch-label"></label>
+         </div>
+         <div class="box">
+            <h3>HUMIDITY</h3>
+            <h1><span id="humid">00</span></h1>
+            <h4>THRESHOLD</h4>
+            <div class="input-group">
+               <span class="change-btn" id="humid-minus">-</span>
+               <span class="num" id="humid-thresh-num">00</span>
+               <span class="change-btn" id="humid-plus">+</span>
+            </div>
+         </div>
+         <div class="box">
+            <h3>TEMPERATURE</h3>
+            <h1><span id="temp">00</span></h1>
+            <h4>THRESHOLD</h4>
+            <div class="input-group">
+               <span class="change-btn" id="temp-minus">-</span>
+               <span class="num" id="temp-thresh-num">00</span>
+               <span class="change-btn" id="temp-plus">+</span>
+            </div>
+         </div>
+         <div class="box">
+            <h3>AIR QUALITY</h3>
+            <h1><span id="air-q">00</span></h1>
+            <h4>THRESHOLD</h4>
+            <div class="input-group">
+               <span class="change-btn" id="airq-minus">-</span>
+               <span class="num" id="airq-thresh-num">00</span>
+               <span class="change-btn" id="airq-plus">+</span>
+            </div>
          </div>
       </div>
 
