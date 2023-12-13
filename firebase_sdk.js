@@ -159,13 +159,13 @@ document.addEventListener("DOMContentLoaded", function() {
         if (manual_status === 0) {
             fan_switch.disabled = true;
             buzzer_switch.disabled = true;
-            manual_state.textContent = "OFF";
+            manual_state.textContent = "AUTO";
             buzzer_box.style.background = "#adb3cc"
             fan_box.style.background = "#adb3cc"
         } else {
             fan_switch.disabled = false;
             buzzer_switch.disabled = false;
-            manual_state.textContent = "ON";
+            manual_state.textContent = "MANUAL";
             buzzer_box.style.background = "#f99f93"
             fan_box.style.background = "#f99f93"
         }

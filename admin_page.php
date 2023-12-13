@@ -52,7 +52,7 @@ if(!isset($_SESSION['admin_name'])){
             <label for="fan-switch" class="switch-label"></label>
          </div>
          <div class="box">
-            <h3>MANUAL: <span id="manual-state"></span></h3>
+            <h3>MODE: <span id="manual-state"></span></h3>
             <input type="checkbox" id="manual-switch" class="switch-input" >
             <label for="manual-switch" class="switch-label"></label>
          </div>
