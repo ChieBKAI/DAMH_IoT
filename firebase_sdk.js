@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     humid_plus.addEventListener("click", function(event) {
         var humid_thresh = parseInt(humid_thresh_num.textContent);
-        if (humid_thresh < 100 && manual_state.textContent === "MANUAL") {
+        if (humid_thresh < 100 ) {
             humid_thresh += 1;
         }
         database.ref("/Board_IoT/HUMID_THRESH").set(humid_thresh);
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     humid_minus.addEventListener("click", function(event) {
         var humid_thresh = parseInt(humid_thresh_num.textContent);
-        if (humid_thresh > 0 && manual_state.textContent === "MANUAL") {
+        if (humid_thresh > 0 ) {
             humid_thresh -= 1;
         }
         database.ref("/Board_IoT/HUMID_THRESH").set(humid_thresh);
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     temp_plus.addEventListener("click", function(event) {
         var temp_thresh = parseInt(temp_thresh_num.textContent);
-        if (temp_thresh < 100 && manual_state.textContent === "MANUAL") {
+        if (temp_thresh < 100 ) {
             temp_thresh += 1;
         }
         database.ref("/Board_IoT/TEMP_THRESH").set(temp_thresh);
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     temp_minus.addEventListener("click", function(event) {
         var temp_thresh = parseInt(temp_thresh_num.textContent);
-        if (temp_thresh > 0 && manual_state.textContent === "MANUAL") {
+        if (temp_thresh > 0 ) {
             temp_thresh -= 1;
         }
         database.ref("/Board_IoT/TEMP_THRESH").set(temp_thresh);
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     airq_plus.addEventListener("click", function(event) {
         var airq_thresh = parseInt(airq_thresh_num.textContent);
-        if (airq_thresh < 100 && manual_state.textContent === "MANUAL") {
+        if (airq_thresh < 100 ) {
             airq_thresh += 1;
         }
         database.ref("/Board_IoT/AIRQ_THRESH").set(airq_thresh);
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     airq_minus.addEventListener("click", function(event) {
         var airq_thresh = parseInt(airq_thresh_num.textContent);
-        if (airq_thresh > 0 && manual_state.textContent === "MANUAL") {
+        if (airq_thresh > 0 ) {
             airq_thresh -= 1;
         }
         database.ref("/Board_IoT/AIRQ_THRESH").set(airq_thresh);
@@ -135,12 +135,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     database.ref("/Board_IoT/AIR_Q").on("value", function(snapshot) {
         var air_q = snapshot.val();
-        document.getElementById("air-q").innerHTML = air_q + "ppm";
+        document.getElementById("air-q").innerHTML = air_q + "µg/m³";
     });
 
     database.ref("/Board_IoT/AIRQ_THRESH").on("value", function(snapshot) {
         var airq_thresh = snapshot.val();
-        document.getElementById("airq-thresh-num").innerHTML = airq_thresh + "ppm";
+        document.getElementById("airq-thresh-num").innerHTML = airq_thresh + "µg/m³";
     });
 
     database.ref("/Board_IoT/FAN").on("value", function(snapshot) {
