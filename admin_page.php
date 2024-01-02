@@ -61,6 +61,10 @@ if(!isset($_SESSION['admin_name'])){
             <input type="checkbox" id="buzzer-switch" class="switch-input" disabled>
             <label for="buzzer-switch" class="switch-label"></label>
          </div>
+
+      </div>
+
+      <div class="boxes2">
          <div class="box">
             <h3>HUMIDITY</h3>
             <h1><span id="humid">00</span></h1>
@@ -90,6 +94,15 @@ if(!isset($_SESSION['admin_name'])){
                <span class="num" id="airq-thresh-num">00</span>
                <span class="change-btn" id="airq-plus">+</span>
             </div>
+         </div>
+         <div class="box">
+            <h3>GAS DETECTION</h3>
+            <h1><span id="gas">00</span></h1>
+            <h4>THRESHOLD</h4>
+            <div class="input-group">
+               <span class="change-btn" id="gas-minus">-</span>
+               <span class="num" id="gas-thresh-num">00</span>
+               <span class="change-btn" id="gas-plus">+</span>
          </div>
       </div>
 

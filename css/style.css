@@ -142,6 +142,14 @@
    grid-gap: 10px;
    margin-top: 10px;
 }
+
+.boxes2 {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-gap: 10px;
+   margin-top: 10px;
+}
+
 .box {
    background: rgb(249, 159, 147);
    padding: 20px;
@@ -154,15 +162,31 @@
    justify-content: center; /* Căn giữa theo chiều ngang */
    align-items: center; /* Căn giữa theo chiều dọc */
 }
-.box:nth-child(3n + 1) {
-   margin-left: 20%; /* Thêm margin trái âm để tạo hiệu ứng viền */
+.boxes .box:nth-child(1) {
+   margin-left: 10%; /* Thêm margin trái âm để tạo hiệu ứng viền */
 }
-.box:nth-child(3n) {
-   margin-right: 20%; /* Thêm margin phải âm để tạo hiệu ứng viền */
+.boxes .box:nth-child(2) {
+   margin-left: 5%; /* Thêm margin trái âm để tạo hiệu ứng viền */
+   margin-right: 5%; /* Thêm margin phải âm để tạo hiệu ứng viền */
 }
-.box:nth-child(3n + 2) {
-   margin: 0 10%; /* Thêm margin trái và phải âm để tạo hiệu ứng viền */
+.boxes .box:nth-child(3) {
+   margin-right: 10%; /* Thêm margin phải âm để tạo hiệu ứng viền */
 }
+
+.boxes2 .box:nth-child(1) {
+   margin-left: 10%; /* Thêm margin trái âm để tạo hiệu ứng viền */
+}
+.boxes2 .box:nth-child(2) {
+   margin-left: 5%; /* Thêm margin trái âm để tạo hiệu ứng viền */
+   margin-right: 2.5%; /* Thêm margin phải âm để tạo hiệu ứng viền */
+}
+.boxes2 .box:nth-child(3) {
+   margin-right: 5%; /* Thêm margin phải âm để tạo hiệu ứng viền */
+   margin-left: 2.5%; /* Thêm margin trái âm để tạo hiệu ứng viền */
+}
+.boxes2 .box:nth-child(4) {
+   margin-right: 10%; /* Thêm margin phải âm để tạo hiệu ứng viền */
+}  
 
 
 .box h3 {
@@ -177,7 +201,7 @@
    margin-top: 2%;
 }
 
-.boxes .box h1 span {
+.box h1 span {
    background: rgba(202, 18, 55, 0.653);
    color:#fff;
    border-radius: 2vw;
@@ -226,7 +250,7 @@
    transform: translate(0%, -50%);
 }
 
-.boxes .box .input-group {
+.box .input-group {
    position: relative;
    display: flex;
    align-items: center;
@@ -236,13 +260,13 @@
    box-shadow: 0 5px 10px rgba(11, 11, 11, 0.533);
    width: 80%;
 }
-.boxes .box .input-group span {
+.box .input-group span {
    width: 50%;
    text-align: center;
    font-size: 30px;
    cursor: pointer;
 }
-.boxes .box .input-group span.num{
+.box .input-group span.num{
    font-size: 20px;
    font-weight: 900;
    border-right: 2px solid #f9f4f4;

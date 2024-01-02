@@ -41,6 +41,10 @@ document.addEventListener("DOMContentLoaded", function() {
     var airq_plus = document.getElementById("airq-plus");
     var airq_minus = document.getElementById("airq-minus");
     var airq_thresh_num = document.getElementById("airq-thresh-num");
+    var gas_plus = document.getElementById("gas-plus");
+    var gas_minus = document.getElementById("gas-minus");
+    var gas_thresh_num = document.getElementById("gas-thresh-num");
+
 
 
    // Add event listeners for when the switches change
@@ -93,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     airq_plus.addEventListener("click", function(event) {
         var airq_thresh = parseInt(airq_thresh_num.textContent);
-        if (airq_thresh < 100 ) {
+        if (airq_thresh < 999 ) {
             airq_thresh += 1;
         }
         database.ref("/Board_IoT/AIRQ_THRESH").set(airq_thresh);
@@ -106,6 +110,23 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         database.ref("/Board_IoT/AIRQ_THRESH").set(airq_thresh);
     });
+
+    gas_plus.addEventListener("click", function(event) {
+        var gas_thresh = parseInt(gas_thresh_num.textContent);
+        if (gas_thresh < 999 ) {
+            gas_thresh += 1;
+        }
+        database.ref("/Board_IoT/GAS_THRESH").set(gas_thresh);
+    });
+
+    gas_minus.addEventListener("click", function(event) {
+        var gas_thresh = parseInt(gas_thresh_num.textContent);
+        if (gas_thresh > 0 ) {
+            gas_thresh -= 1;
+        }   
+        database.ref("/Board_IoT/GAS_THRESH").set(gas_thresh);
+    });
+
 
 
 
@@ -141,6 +162,16 @@ document.addEventListener("DOMContentLoaded", function() {
     database.ref("/Board_IoT/AIRQ_THRESH").on("value", function(snapshot) {
         var airq_thresh = snapshot.val();
         document.getElementById("airq-thresh-num").innerHTML = airq_thresh + "µg/m³";
+    });
+
+    database.ref("/Board_IoT/GAS").on("value", function(snapshot) {
+        var gas = snapshot.val();
+        document.getElementById("gas").innerHTML = gas + "ppm";
+    });
+
+    database.ref("/Board_IoT/GAS_THRESH").on("value", function(snapshot) {
+        var gas_thresh = snapshot.val();
+        document.getElementById("gas-thresh-num").innerHTML = gas_thresh + "ppm";
     });
 
     database.ref("/Board_IoT/FAN").on("value", function(snapshot) {
